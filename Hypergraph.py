@@ -35,6 +35,12 @@ class Hypergraph:
                 opt_coloring = c
         return np.asarray(opt_coloring), min_disc
 
+    def calc_mean_discrepancy(self):
+        sum_disc = 0
+        for c in itertools.product([-1, 1], repeat=self.n):
+            sum_disc += self.calc_discrepancy(c)
+        return sum_disc/(2**self.n)
+
     @staticmethod
     def roth(n):
         ## a set of all arimetic progressions in [n]
@@ -95,6 +101,7 @@ if __name__ == '__main__':
     graph = Hypergraph.roth(n)
     print(graph.incidence)
     print('degree =', graph.degree)
+    print('mean discrepancy =', graph.calc_mean_discrepancy())
     coloring, disc = graph.find_optimal_coloring()
     print('optimal coloring =', coloring)
     print('optimal discrepancy = ', disc)
