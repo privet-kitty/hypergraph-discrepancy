@@ -4,6 +4,7 @@
 Let ROTH(n) be the set of all arithmetic progressions in \[n\]. Applying [Bansal-Dadusch-Garg algorithm](https://arxiv.org/abs/1605.02882) for Beck-Fiala problem to ROTH(n) brings a coloring with discrepancy _O(t log n)_, which is theoretically not better than random coloring. How good is it practically, however?
 
 ### Efficiency
+Each measured value is a median of 5 trials.
 ![Elapsed time](elapsed_time.png)
 ![Number of SDPs](num_steps.png)
 
@@ -22,3 +23,7 @@ t stat. = -0.8785611189861349
 ppf of t-distribution with p<0.01, 1-tail, df=99: -2.364605861435974
 H0 is not rejected.
 ```
+
+
+### Comment
+Bansal's algorithm doesn't seem to be suitable for practical use, especially when the set system is non-sparse.
