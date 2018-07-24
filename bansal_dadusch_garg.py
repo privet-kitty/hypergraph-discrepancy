@@ -1,8 +1,9 @@
 # -*- encoding: utf-8 -*-
-#
-# Bansal's algorithm for Beck-Fiala problem in 'An Algorithm for
-# Komlós Conjecture Matching Banaszczyk's Bound' (2016)
-#
+
+"""
+Bansal's algorithm for Beck-Fiala problem in 'An Algorithm for
+Komlós Conjecture Matching Banaszczyk's Bound' (2016)
+"""
 
 import numpy as np
 import picos as pic

@@ -1,9 +1,11 @@
 # -*- encoding: utf-8 -*-
 
-#
-# Accuracy test of Bansal's algorithm for Roth's problem
-#
-# usage: python bdg_on_roth_problem3.py [n] [sample]
+"""
+Accuracy test of Bansal's algorithm for Roth's problem
+Usage:
+$ python bdg_on_roth_problem3.py [n] [sample]
+=> investigate ROTH(n)
+"""
 
 import sys
 import time as tm

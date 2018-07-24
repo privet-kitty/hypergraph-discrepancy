@@ -1,9 +1,10 @@
 # -*- encoding: utf-8 -*-
 
-#
-# Basic test of Bansal's algorithm for Roth's problem
-#
-# Usage: python bdg_on_roth_problem.py
+"""
+Basic test of Bansal's algorithm for Roth's problem
+Usage: 
+$ python bdg_on_roth_problem.py
+"""
 
 import sys
 from Hypergraph import Hypergraph

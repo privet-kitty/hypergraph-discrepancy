@@ -1,7 +1,7 @@
-#
-# Application of Bansal-Garg framework in 'Algorithmic Discrepancy
-# Beyond Partial Coloring' (2016) to Beck-Fiala problem
-#
+"""
+Application of Bansal-Garg framework in 'Algorithmic Discrepancy
+Beyond Partial Coloring' (2016) to Beck-Fiala problem
+"""
 
 import numpy as np
 import picos as pic

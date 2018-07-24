@@ -25,7 +25,7 @@ class Hypergraph:
         return np.amax(abs(np.dot(coloring, self.incidence)))
 
     def find_optimal_coloring(self):
-        # Brute force search
+        """Brute force search"""
         min_disc = self.n
         opt_coloring = np.ones(self.n, dtype=int)
         for c in itertools.product([-1, 1], repeat=self.n):
@@ -43,7 +43,7 @@ class Hypergraph:
 
     @staticmethod
     def roth(n):
-        ## a set of all arimetic progressions in [n]
+        """Returns the set of all arimetic progressions in [n]"""
         m = 0
         for delta in range(1, n):
             for base in range(n-delta):
@@ -66,8 +66,9 @@ class Hypergraph:
 
     @staticmethod
     def roth_infinite(n):
-        ## a set of all arimetic progressions without supremum nor
-        ## infimum in Z, limited to {1, 2, ..., N}
+        """Returns the set of all arimetic progressions without supremum nor
+        infimum in Z, limited to {1, 2, ..., N}
+        """
         half_n = n//2
         if (n % 2) == 1:
             m = half_n*(half_n+1) + n

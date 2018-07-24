@@ -1,10 +1,11 @@
 # -*- encoding: utf-8 -*-
 
-#
-# Efficiency test of Bansal's algorithm for Roth's problem
-#
-# usage: python bdg_on_roth_problem2.py [end_n] [sample]
-# => investigate ROTH[2] to ROTH[end_n-1] with sample = [sample]
+"""
+Efficiency test of Bansal's algorithm for Roth's problem
+Usage:
+$ python bdg_on_roth_problem2.py [end_n] [sample]
+=> investigate ROTH[2] to ROTH[end_n-1] with sample = [sample]
+"""
 
 import sys
 import time as tm
