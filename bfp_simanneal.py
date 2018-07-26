@@ -1,6 +1,7 @@
 import math
 import sys
 import numpy as np
+import time
 from Hypergraph import Hypergraph
 from simanneal import Annealer
 
@@ -44,9 +45,12 @@ if __name__ == '__main__':
 
     bfp = BeckFialaProblem(init_coloring, graph)
 
-    bfp.steps = 100000
+    bfp.Tmin = 0.2
+    bfp.steps = 50000
     bfp.copy_strategy = "slice"
+    start_time = time.time()
     state, disc = bfp.anneal()
+    elapsed_time = time.time() - start_time
 
     print("n =", graph.n, ", m =", graph.m)
     print("Incidence matrix:\n", graph.incidence)
@@ -55,9 +59,9 @@ if __name__ == '__main__':
     print()
     print("coloring by simanneal:", state)
     print("discrepancy by simanneal:", disc)
+    print('elapsed time:', elapsed_time)
     
     opt_coloring, disc = graph.find_optimal_coloring()
-    print('optimal coloring =', opt_coloring)
-    print('optimal discrepancy = ', disc)
-
+    print('optimal coloring:', opt_coloring)
+    print('optimal discrepancy: ', disc)
 
