@@ -4,7 +4,7 @@
 Bansal's algorithm with Simulated Annealing for Beck-Fiala problem.
 Usage:
 $ python bdg_with_simanneal.py [n]
-find optimal coloring for the hypergraph ROTH(n)
+search optimal coloring for ROTH(n) (Roth's hypergraph).
 """
 
 import numpy as np
@@ -113,7 +113,8 @@ if __name__ == '__main__':
     print("final coloring (int):", coloring)
     print("discrepancy:", graph.calc_discrepancy(coloring))
     # print('elapsed time:', elapsed_time)
-    
+
+    print("now finding optimal coloring...")
     opt_coloring, disc = graph.find_optimal_coloring()
     print('optimal coloring:', opt_coloring)
     print('optimal discrepancy: ', disc)
