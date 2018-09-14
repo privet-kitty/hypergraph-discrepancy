@@ -3,6 +3,7 @@
 import numpy as np
 import sys
 import itertools
+import math
 
 class Hypergraph:
     def __init__(self, n, m):
@@ -47,9 +48,9 @@ class Hypergraph:
         m = 0
         for delta in range(1, n):
             for base in range(n-delta):
-                for length in range(2, (n-base-1)//delta+2):
-                    m += 1
-        m += n
+                len = (n-base-1)//delta
+                m += len
+        m += n # ROTH(n) has n unit sets.
         graph = Hypergraph(n, m)
         col = 0
         for delta in range(1, n):
@@ -63,6 +64,17 @@ class Hypergraph:
             col +=1
         graph.degree = graph.calc_degree()
         return graph
+
+    @staticmethod
+    def get_roth_degree(n, i):
+        """Returns the degree of a given point i in ROTH(n)"""
+        t = 0
+        for delta in range (1, n):
+            num_starting_point = math.ceil((i+1)/delta)
+            num_ending_point = math.ceil((n-i)/delta)
+            t += num_starting_point*num_ending_point - 1 # exclude the case: start = end
+        return t+1 # add one-point case
+    
 
     @staticmethod
     def roth_infinite(n):

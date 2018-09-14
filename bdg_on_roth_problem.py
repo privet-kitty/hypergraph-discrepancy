@@ -15,7 +15,9 @@ graph = Hypergraph.roth(n)
 
 print("n =", graph.n, ", m =", graph.m)
 print("Incidence matrix:\n", graph.incidence)
-print("degree=", graph.degree)
+print("degree =", graph.degree, ":")
+for i in range(n):
+    print("\tdegree of point", i, "=", Hypergraph.get_roth_degree(n, i))
 
 coloring, time = solve(graph, print_per_time = 100)
 print("final discrepancy =", graph.calc_discrepancy(coloring))
