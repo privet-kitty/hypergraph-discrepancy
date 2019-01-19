@@ -19,8 +19,8 @@ print("degree =", graph.degree, ":")
 for i in range(n):
     print("\tdegree of point", i, "=", Hypergraph.get_roth_degree(n, i))
 
-coloring, time = solve(graph, print_per_time = 100)
-print("final discrepancy =", graph.calc_discrepancy(coloring))
+# coloring, time = solve(graph, print_per_time = 100)
+# print("final discrepancy =", graph.calc_discrepancy(coloring))
 
 opt_coloring, disc = graph.find_optimal_coloring()
 print('optimal coloring =', opt_coloring)
